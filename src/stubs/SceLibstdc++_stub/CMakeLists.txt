@@ -292,4 +292,4 @@ set(SRCS
     SceLibstdc++_stub.S
 )
 
-add_psp2_stub(SceLibstdc++ ${SRCS} ${NIDS})
+add_psp2_stub(libstdc++ ${SRCS} ${NIDS})

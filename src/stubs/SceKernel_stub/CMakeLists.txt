@@ -4,8 +4,6 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-# FIXME this may not be correct
-
 set(LIBKERNEL_NIDS
     0x01c9cd92 0x0226a017 0x04b30cb2 0x079a573b
     0x08266595 0x0a10c1c8 0x0c7b834b 0x0ca71ea2

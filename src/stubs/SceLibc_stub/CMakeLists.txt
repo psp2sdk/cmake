@@ -106,4 +106,4 @@ set(SRCS
 	SceLibc_stub.S
 )
 
-add_psp2_libc_stub(SceLibc ${SRCS} ${FNIDS} ${VNIDS})
+add_psp2_libc_stub(libc ${SRCS} ${FNIDS} ${VNIDS})

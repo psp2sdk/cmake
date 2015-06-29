@@ -62,4 +62,4 @@ set(SRCS
     SceLibm_stub.S
 )
 
-add_psp2_stub(SceLibm ${SRCS} ${NIDS})
+add_psp2_stub(libm ${SRCS} ${NIDS})
