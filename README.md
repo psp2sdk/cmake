@@ -22,21 +22,23 @@ Coders, editors for documents, testers who can use CLI are needed! Please join u
 
 [josh_axey](https://github.com/joshaxey)
 
-[tomtomdu80] (https://github.com/tomtomdu80)
+[tomtomdu80](https://github.com/tomtomdu80)
 
-[MysteryDash] (https://github.com/MysteryDash)
+[MysteryDash](https://github.com/MysteryDash)
 
-[frangarcj] (https://github.com/frangarcj)
+[frangarcj](https://github.com/frangarcj)
 
-[korgano] (https://github.com/korgano)
+[korgano](https://github.com/korgano)
 
-[bigboss] (https://github.com/psxdev)
+[bigboss](https://github.com/psxdev)
 
-[yne] (https://github.com/yne)
+[yne](https://github.com/yne)
 
-[xerpi] (https://github.com/xerpi)
+[xerpi](https://github.com/xerpi)
 
-[Ryp] (https://github.com/Ryp)
+[Ryp](https://github.com/Ryp)
+
+[Davee](https://github.com/DaveeFTW)
 
 Please add yourself to this list when you make changes on your fork and submit a pull request.
 
