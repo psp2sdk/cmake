@@ -36,4 +36,4 @@ set(SRCS
     SceCommonDialog_stub.S
 )
 
-add_psp2_stub(SceCommonDialog ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceCommonDialog ${SRCS} "${NIDS}")

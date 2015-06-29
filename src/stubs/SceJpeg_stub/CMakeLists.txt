@@ -14,4 +14,4 @@ set(SRCS
     SceJpegUser_stub.S
 )
 
-add_psp2_stub(SceJpeg ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceJpeg ${SRCS} "${NIDS}")

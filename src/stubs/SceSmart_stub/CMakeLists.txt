@@ -21,4 +21,4 @@ set(SRCS
     SceSmart_stub.S
 )
 
-add_psp2_stub(SceSmart ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceSmart ${SRCS} "${NIDS}")

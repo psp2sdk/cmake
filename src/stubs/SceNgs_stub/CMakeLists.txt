@@ -28,4 +28,4 @@ set(SRCS
     SceNgs_stub.S
 )
 
-add_psp2_stub(SceNgs ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNgs ${SRCS} "${NIDS}")

@@ -58,8 +58,4 @@ set(NIDS
     0xff4eae04
 )
 
-set(SRCS
-    SceLibm_stub.S
-)
-
-add_psp2_stub(libm ${SRCS} ${NIDS})
+add_psp2_one_module_stub(m SceLibm_stub.S "${NIDS}")

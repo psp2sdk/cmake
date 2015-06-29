@@ -18,4 +18,4 @@ set(SRCS
     ScePerf_stub.S
 )
 
-add_psp2_stub(ScePerf ${SRCS} ${NIDS})
+add_psp2_one_module_stub(ScePerf ${SRCS} "${NIDS}")

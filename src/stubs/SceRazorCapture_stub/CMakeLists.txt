@@ -14,4 +14,4 @@ set(SRCS
     SceRazorCapture_stub.S
 )
 
-add_psp2_stub(SceRazorCapture ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceRazorCapture ${SRCS} "${NIDS}")

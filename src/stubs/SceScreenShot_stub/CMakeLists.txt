@@ -13,4 +13,4 @@ set(SRCS
     SceScreenShot_stub.S
 )
 
-add_psp2_stub(SceScreenShot ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceScreenShot ${SRCS} "${NIDS}")

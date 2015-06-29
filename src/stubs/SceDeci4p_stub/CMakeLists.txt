@@ -13,4 +13,4 @@ set(SRCS
     SceDeci4pUserp_stub.S
 )
 
-add_psp2_stub(SceDeci4p ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceDeci4p ${SRCS} "${NIDS}")

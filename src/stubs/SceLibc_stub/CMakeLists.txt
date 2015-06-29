@@ -102,8 +102,5 @@ set(VNIDS
 	0xe5620a03 0xf708906e
 )
 
-set(SRCS
-	SceLibc_stub.S
-)
-
-add_psp2_libc_stub(libc ${SRCS} ${FNIDS} ${VNIDS})
+add_psp2_stub_module_with_var(c SceLibc_stub.S "${FNIDS}" "${VNIDS}")
+add_psp2_stub(c)

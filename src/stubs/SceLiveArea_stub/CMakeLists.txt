@@ -13,4 +13,4 @@ set(SRCS
     SceLiveAreaUtil_stub.S
 )
 
-add_psp2_stub(SceLiveArea ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceLiveArea ${SRCS} "${NIDS}")

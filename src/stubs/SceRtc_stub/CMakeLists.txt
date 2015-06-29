@@ -19,9 +19,6 @@ set(NIDS
 
 )
 
-set(SRCS
-    SceRtc_stub.S
-    SceRtcUser_stub.S
-)
-
-add_psp2_stub(SceRtc ${SRCS} ${NIDS})
+add_psp2_stub_module(SceRtc SceRtc_stub.S "${NIDS}")
+add_psp2_stub_module(SceRtc SceRtcUser_stub.S "${NIDS}")
+add_psp2_stub(SceRtc)

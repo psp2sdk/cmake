@@ -12,4 +12,4 @@ set(SRCS
     SceClipboard_stub.S
 )
 
-add_psp2_stub(SceClipboard ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceClipboard ${SRCS} "${NIDS}")

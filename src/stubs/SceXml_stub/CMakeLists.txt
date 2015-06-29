@@ -58,4 +58,4 @@ set(SRCS
     SceLibXml_stub.S
 )
 
-add_psp2_stub(SceXml ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceXml ${SRCS} "${NIDS}")

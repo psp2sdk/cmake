@@ -15,4 +15,4 @@ set(SRCS
     SceFpu_stub.S
 )
 
-add_psp2_stub(SceFpu ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceFpu ${SRCS} "${NIDS}")

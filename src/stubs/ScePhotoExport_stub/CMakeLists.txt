@@ -12,4 +12,4 @@ set(SRCS
     ScePhotoExport_stub.S
 )
 
-add_psp2_stub(ScePhotoExport ${SRCS} ${NIDS})
+add_psp2_one_module_stub(ScePhotoExport ${SRCS} "${NIDS}")

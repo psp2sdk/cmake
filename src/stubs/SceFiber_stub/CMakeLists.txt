@@ -15,4 +15,4 @@ set(SRCS
     SceFiber_stub.S
 )
 
-add_psp2_stub(SceFiber ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceFiber ${SRCS} "${NIDS}")

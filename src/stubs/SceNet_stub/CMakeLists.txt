@@ -21,8 +21,4 @@ set(NIDS
     0xf084fce3 0xf9d102ae 0xfb3336a6 0xfec1166d
 )
 
-set(SRCS
-    SceNet_stub.S
-)
-
-add_psp2_stub(SceNet ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNet SceNet_stub.S "${NIDS}")

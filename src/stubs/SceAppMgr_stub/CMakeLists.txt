@@ -10,8 +10,10 @@ set(NIDS
 )
 
 set(SRCS
-    SceAppMgrUser_stub.S
     SceAppMgr_stub.S
+    SceAppMgrUser_stub.S
 )
 
-add_psp2_stub(SceAppMgr ${SRCS} ${NIDS})
+add_psp2_stub_module(SceAppMgr SceAppMgr_stub.S "${NIDS}")
+add_psp2_stub_module(SceAppMgr SceAppMgrUser_stub.S "${NIDS}")
+add_psp2_stub(SceAppMgr)

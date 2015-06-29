@@ -18,4 +18,4 @@ set(SRCS
     SceHmac_stub.S
 )
 
-add_psp2_stub(SceHmac ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceHmac ${SRCS} "${NIDS}")

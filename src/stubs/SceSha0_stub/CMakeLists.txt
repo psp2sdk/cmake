@@ -12,4 +12,4 @@ set(SRCS
     SceSha0_stub.S
 )
 
-add_psp2_stub(SceSha0 ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceSha0 ${SRCS} "${NIDS}")

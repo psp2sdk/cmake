@@ -4,64 +4,53 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-macro(add_psp2_stub stubname sources nids)
-    set(STUB_NAME "${stubname}_stub")
-    set(STUB_NIDS "${STUB_NAME}_NIDS")
-    set(STUB_HEAD "${STUB_NAME}_head")
-    set_source_files_properties(${sources} PROPERTIES LANGUAGE C)
-    # FUNC objects
-    foreach(NID ${NIDS})
-        set(CURRENT_TARGET "${STUB_NAME}_${NID}")
-        add_library(${CURRENT_TARGET} OBJECT ${sources})
-        target_compile_definitions(${CURRENT_TARGET} PRIVATE -DFUNC=${NID})
-        list(APPEND NIDS_TARGETS $<TARGET_OBJECTS:${CURRENT_TARGET}>)
-    endforeach()
-    # HEAD object
-    add_library(${STUB_HEAD} OBJECT ${sources})
-    target_compile_definitions(${STUB_HEAD} PRIVATE -DHEAD)
-    # NIDS object
-    add_library(${STUB_NIDS} OBJECT ${sources})
-    target_compile_definitions(${STUB_NIDS} PRIVATE -DNIDS)
-    # STUB library
-    add_library(${STUB_NAME} STATIC
-        $<TARGET_OBJECTS:${STUB_HEAD}>
-        $<TARGET_OBJECTS:${STUB_NIDS}>
-        ${NIDS_TARGETS})
-    install(TARGETS ${STUB_NAME} DESTINATION lib)
+# ${stubname}_TARGETS is the variable that keeps track of the dependencies
+
+# Reuse dependencies and link stub library
+macro(add_psp2_stub stubname)
+	add_library(${stubname}_stub STATIC ${${stubname}_TARGETS})
+	install(TARGETS ${stubname}_stub DESTINATION lib)
 endmacro()
 
-macro(add_psp2_libc_stub stubname sources fnids vnids)
-    set(STUB_NAME "${stubname}_stub")
-    set(STUB_NIDS "${STUB_NAME}_NIDS")
-    set(STUB_HEAD "${STUB_NAME}_head")
-    set_source_files_properties(${sources} PROPERTIES LANGUAGE C)
-    # FUNC objects
-    foreach(FNID ${FNIDS})
-        set(CURRENT_TARGET "${STUB_NAME}_f${FNID}")
-        add_library(${CURRENT_TARGET} OBJECT ${sources})
-        target_compile_definitions(${CURRENT_TARGET} PRIVATE -DFUNC=${FNID})
-        list(APPEND FNIDS_TARGETS $<TARGET_OBJECTS:${CURRENT_TARGET}>)
-    endforeach()
-    # VAR objects
-    foreach(VNID ${VNIDS})
-        set(CURRENT_TARGET "${STUB_NAME}_v${VNID}")
-        add_library(${CURRENT_TARGET} OBJECT ${sources})
-        target_compile_definitions(${CURRENT_TARGET} PRIVATE -DVAR=${VNID})
-        list(APPEND VNIDS_TARGETS $<TARGET_OBJECTS:${CURRENT_TARGET}>)
-    endforeach()
-    # HEAD object
-    add_library(${STUB_HEAD} OBJECT ${sources})
-    target_compile_definitions(${STUB_HEAD} PRIVATE -DHEAD)
-    # NIDS object
-    add_library(${STUB_NIDS} OBJECT ${sources})
-    target_compile_definitions(${STUB_NIDS} PRIVATE -DNIDS)
-    # STUB library
-    add_library(${STUB_NAME} STATIC
-        $<TARGET_OBJECTS:${STUB_HEAD}>
-        $<TARGET_OBJECTS:${STUB_NIDS}>
-        ${FNIDS_TARGETS}
-        ${VNIDS_TARGETS})
-    install(TARGETS ${STUB_NAME} DESTINATION lib)
+# Add targets for current stub module
+macro(add_psp2_stub_module stubname module nids)
+	get_filename_component(STUB_MODULE_BASE ${module} NAME_WE)
+	set(STUB_NIDS "${stubname}_${STUB_MODULE_BASE}_NIDS")
+	set(STUB_HEAD "${stubname}_${STUB_MODULE_BASE}_head")
+	set_source_files_properties(${module} PROPERTIES LANGUAGE C)
+	# FUNC objects
+	foreach(NID ${nids})
+		set(CURRENT_TARGET "${stubname}_${STUB_MODULE_BASE}_${NID}")
+		add_library(${CURRENT_TARGET} OBJECT ${module})
+		target_compile_definitions(${CURRENT_TARGET} PRIVATE -DFUNC=${NID})
+		list(APPEND ${stubname}_TARGETS $<TARGET_OBJECTS:${CURRENT_TARGET}>)
+	endforeach()
+	# HEAD object
+	add_library(${STUB_HEAD} OBJECT ${module})
+	target_compile_definitions(${STUB_HEAD} PRIVATE -DHEAD)
+	list(APPEND ${stubname}_TARGETS $<TARGET_OBJECTS:${STUB_HEAD}>)
+	# NIDS object
+	add_library(${STUB_NIDS} OBJECT ${module})
+	target_compile_definitions(${STUB_NIDS} PRIVATE -DNIDS)
+	list(APPEND ${stubname}_TARGETS $<TARGET_OBJECTS:${STUB_NIDS}>)
+endmacro()
+
+# Simple macro to use when there's only one module per stub
+macro(add_psp2_one_module_stub stubname module nids)
+	add_psp2_stub_module(${stubname} ${module} "${nids}")
+	add_psp2_stub(${stubname})
+endmacro()
+
+# Used for libc_stub
+macro(add_psp2_stub_module_with_var stubname module nids vnids)
+	add_psp2_stub_module(${stubname} ${module} "${nids}")
+	# VAR objects
+	foreach(NID ${vnids})
+		set(CURRENT_TARGET "${stubname}_${STUB_MODULE_BASE}_${NID}")
+		add_library(${CURRENT_TARGET} OBJECT ${module})
+		target_compile_definitions(${CURRENT_TARGET} PRIVATE -DVAR=${NID})
+		list(APPEND ${stubname}_TARGETS $<TARGET_OBJECTS:${CURRENT_TARGET}>)
+	endforeach()
 endmacro()
 
 add_subdirectory(SceAppMgr_stub)

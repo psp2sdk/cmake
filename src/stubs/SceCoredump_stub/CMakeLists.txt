@@ -13,4 +13,4 @@ set(SRCS
     SceCoredumpNounlink_stub.S
 )
 
-add_psp2_stub(SceCoredump ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceCoredump ${SRCS} "${NIDS}")

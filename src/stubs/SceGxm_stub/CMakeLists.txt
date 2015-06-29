@@ -75,4 +75,4 @@ set(SRCS
     SceGxm_stub.S
 )
 
-add_psp2_stub(SceGxm ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceGxm ${SRCS} "${NIDS}")

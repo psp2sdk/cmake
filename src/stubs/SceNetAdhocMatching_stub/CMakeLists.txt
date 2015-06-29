@@ -15,4 +15,4 @@ set(SRCS
     SceNetAdhocMatching_stub.S
 )
 
-add_psp2_stub(SceNetAdhocMatching ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNetAdhocMatching ${SRCS} "${NIDS}")

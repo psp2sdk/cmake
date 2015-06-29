@@ -85,4 +85,4 @@ set(SRCS
     SceLibMonoBridge_stub.S
 )
 
-add_psp2_stub(SceLibMonoBridge ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceLibMonoBridge ${SRCS} "${NIDS}")

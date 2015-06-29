@@ -49,4 +49,4 @@ set(SRCS
     SceFios2_stub.S
 )
 
-add_psp2_stub(SceFios2 ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceFios2 ${SRCS} "${NIDS}")

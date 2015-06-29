@@ -14,4 +14,4 @@ set(SRCS
     SceSsl_stub.S
 )
 
-add_psp2_stub(SceSsl ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceSsl ${SRCS} "${NIDS}")

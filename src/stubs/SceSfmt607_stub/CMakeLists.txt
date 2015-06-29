@@ -14,4 +14,4 @@ set(SRCS
     SceSfmt607_stub.S
 )
 
-add_psp2_stub(SceSfmt607 ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceSfmt607 ${SRCS} "${NIDS}")

@@ -17,4 +17,4 @@ set(SRCS
     SceVideodecUser_stub.S
 )
 
-add_psp2_stub(SceVideodec ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceVideodec ${SRCS} "${NIDS}")

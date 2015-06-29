@@ -21,4 +21,4 @@ set(SRCS
     SceCamera_stub.S
 )
 
-add_psp2_stub(SceCamera ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceCamera ${SRCS} "${NIDS}")

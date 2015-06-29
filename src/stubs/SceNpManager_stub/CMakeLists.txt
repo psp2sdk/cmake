@@ -14,4 +14,4 @@ set(SRCS
     SceNpManager_stub.S
 )
 
-add_psp2_stub(SceNpManager ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpManager ${SRCS} "${NIDS}")

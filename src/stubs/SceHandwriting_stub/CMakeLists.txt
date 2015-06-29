@@ -14,4 +14,4 @@ set(SRCS
     SceHandwriting_stub.S
 )
 
-add_psp2_stub(SceHandwriting ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceHandwriting ${SRCS} "${NIDS}")

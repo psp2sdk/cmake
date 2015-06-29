@@ -123,22 +123,18 @@ set(THREADMGR_NIDS
     0xec94dff7 0xefdda456 0xfd5bd5c1 0xfef4ca53
 )
 
-set(NIDS
-    ${LIBKERNEL_NIDS} ${DEBUGLED_NIDS} ${DIPSW_NIDS} ${IOFILEMGR_NIDS}
-    ${MODULEMGR_NIDS} ${PROCESSMGR_NIDS} ${SYSMEM_NIDS} ${THREADMGR_NIDS}
+set(THREADMGRCOREDUMPTIME_NIDS
+	0x0c8a38e1
 )
 
-set(SRCS
-    SceCpu_stub.S
-    SceDebugLed_stub.S
-    SceDipsw_stub.S
-    SceIofilemgr_stub.S
-    SceLibKernel_stub.S
-    SceModulemgr_stub.S
-    SceProcessmgr_stub.S
-    SceSysmem_stub.S
-    SceThreadmgrCoredumpTime_stub.S
-    SceThreadmgr_stub.S
-)
-
-add_psp2_stub(SceKernel ${SRCS} ${NIDS})
+# add_psp2_stub_module(SceKernel SceCpu_stub.S "${}")
+add_psp2_stub_module(SceKernel SceDebugLed_stub.S "${DEBUGLED_NIDS}")
+add_psp2_stub_module(SceKernel SceDipsw_stub.S "${DIPSW_NIDS}")
+add_psp2_stub_module(SceKernel SceIofilemgr_stub.S "${IOFILEMGR_NIDS}")
+add_psp2_stub_module(SceKernel SceLibKernel_stub.S "${LIBKERNEL_NIDS}")
+add_psp2_stub_module(SceKernel SceModulemgr_stub.S "${MODULEMGR_NIDS}")
+add_psp2_stub_module(SceKernel SceProcessmgr_stub.S "${PROCESSMGR_NIDS}")
+add_psp2_stub_module(SceKernel SceSysmem_stub.S "${SYSMEM_NIDS}")
+add_psp2_stub_module(SceKernel SceThreadmgrCoredumpTime_stub.S "${THREADMGRCOREDUMPTIME_NIDS}")
+add_psp2_stub_module(SceKernel SceThreadmgr_stub.S "${THREADMGR_NIDS}")
+add_psp2_stub(SceKernel)

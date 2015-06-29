@@ -13,4 +13,4 @@ set(SRCS
     SceNpSnsFacebook_stub.S
 )
 
-add_psp2_stub(SceNpSnsFacebook ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpSnsFacebook ${SRCS} "${NIDS}")

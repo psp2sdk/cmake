@@ -12,4 +12,4 @@ set(SRCS
     SceCodecEnginePerf_stub.S
 )
 
-add_psp2_stub(SceCodecEnginePerf ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceCodecEnginePerf ${SRCS} "${NIDS}")

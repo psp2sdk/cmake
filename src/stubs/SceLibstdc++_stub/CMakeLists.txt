@@ -285,11 +285,7 @@ set(NIDS_1
 )
 
 set(NIDS
-    ${NIDS_0} ${NIDS_1}
+	${NIDS_0} ${NIDS_1}
 )
 
-set(SRCS
-    SceLibstdc++_stub.S
-)
-
-add_psp2_stub(libstdc++ ${SRCS} ${NIDS})
+add_psp2_one_module_stub(stdc++ SceLibstdc++_stub.S "${NIDS}")

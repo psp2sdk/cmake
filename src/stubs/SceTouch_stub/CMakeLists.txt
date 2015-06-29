@@ -13,4 +13,4 @@ set(SRCS
     SceTouch_stub.S
 )
 
-add_psp2_stub(SceTouch ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceTouch ${SRCS} "${NIDS}")

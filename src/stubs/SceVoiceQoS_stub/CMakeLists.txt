@@ -16,4 +16,4 @@ set(SRCS
     SceVoiceQoS_stub.S
 )
 
-add_psp2_stub(SceVoiceQoS ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceVoiceQoS ${SRCS} "${NIDS}")

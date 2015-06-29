@@ -18,4 +18,4 @@ set(SRCS
     ScePspnetAdhoc_stub.S
 )
 
-add_psp2_stub(ScePspnetAdhoc ${SRCS} ${NIDS})
+add_psp2_one_module_stub(ScePspnetAdhoc ${SRCS} "${NIDS}")

@@ -16,4 +16,4 @@ set(SRCS
     SceNpSignaling_stub.S
 )
 
-add_psp2_stub(SceNpSignaling ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpSignaling ${SRCS} "${NIDS}")

@@ -21,10 +21,7 @@ set(NIDS
     0xf084fce3 0xf9d102ae 0xfb3336a6 0xfec1166d
 )
 
-set(SRCS
-    SceNet_stub.S
-    sceNetEmulationGet_stub.S
-    sceNetEmulationSet_stub.S
-)
-
-add_psp2_stub(SceNetDebug ${SRCS} ${NIDS})
+add_psp2_stub_module(SceNetDebug SceNet_stub.S "${NIDS}")
+add_psp2_stub_module(SceNetDebug sceNetEmulationGet_stub.S "${NIDS}")
+add_psp2_stub_module(SceNetDebug sceNetEmulationSet_stub.S "${NIDS}")
+add_psp2_stub(SceNetDebug)

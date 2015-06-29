@@ -12,4 +12,4 @@ set(SRCS
     SceGameUpdate_stub.S
 )
 
-add_psp2_stub(SceGameUpdate ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceGameUpdate ${SRCS} "${NIDS}")

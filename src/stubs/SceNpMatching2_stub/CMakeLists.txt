@@ -24,4 +24,4 @@ set(SRCS
     SceNpMatching2_stub.S
 )
 
-add_psp2_stub(SceNpMatching2 ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpMatching2 ${SRCS} "${NIDS}")

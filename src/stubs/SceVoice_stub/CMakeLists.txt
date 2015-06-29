@@ -18,4 +18,4 @@ set(SRCS
     SceVoice_stub.S
 )
 
-add_psp2_stub(SceVoice ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceVoice ${SRCS} "${NIDS}")

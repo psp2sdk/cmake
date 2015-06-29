@@ -15,4 +15,4 @@ set(SRCS
     SceNpTrophy_stub.S
 )
 
-add_psp2_stub(SceNpTrophy ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpTrophy ${SRCS} "${NIDS}")

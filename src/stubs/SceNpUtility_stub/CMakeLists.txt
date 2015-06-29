@@ -20,4 +20,4 @@ set(SRCS
     SceNpUtility_stub.S
 )
 
-add_psp2_stub(SceNpUtility ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpUtility ${SRCS} "${NIDS}")

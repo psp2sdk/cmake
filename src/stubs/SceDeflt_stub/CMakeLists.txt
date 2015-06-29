@@ -11,8 +11,4 @@ set(NIDS
     0xe3cb51a3 0xe680a65a 0xf720a8f6
 )
 
-set(SRCS
-    SceDeflt_stub.S
-)
-
-add_psp2_stub(SceDeflt ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceDeflt SceDeflt_stub.S "${NIDS}")

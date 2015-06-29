@@ -22,4 +22,4 @@ set(SRCS
     ScePvf_stub.S
 )
 
-add_psp2_stub(ScePvf ${SRCS} ${NIDS})
+add_psp2_one_module_stub(ScePvf ${SRCS} "${NIDS}")

@@ -13,4 +13,4 @@ set(SRCS
     SceNpPartyGameUtil_stub.S
 )
 
-add_psp2_stub(SceNpParty ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpParty ${SRCS} "${NIDS}")

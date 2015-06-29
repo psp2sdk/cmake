@@ -22,4 +22,4 @@ set(SRCS
     SceNpCommerce2_stub.S
 )
 
-add_psp2_stub(SceNpCommerce2 ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNpCommerce2 ${SRCS} "${NIDS}")

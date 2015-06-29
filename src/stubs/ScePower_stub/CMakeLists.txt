@@ -14,4 +14,4 @@ set(SRCS
     ScePower_stub.S
 )
 
-add_psp2_stub(ScePower ${SRCS} ${NIDS})
+add_psp2_one_module_stub(ScePower ${SRCS} "${NIDS}")

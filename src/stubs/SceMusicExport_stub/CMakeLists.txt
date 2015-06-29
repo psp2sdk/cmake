@@ -12,4 +12,4 @@ set(SRCS
     SceMusicExport_stub.S
 )
 
-add_psp2_stub(SceMusicExport ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceMusicExport ${SRCS} "${NIDS}")

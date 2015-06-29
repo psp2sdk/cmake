@@ -22,4 +22,4 @@ set(SRCS
     SceAppUtil_stub.S
 )
 
-add_psp2_stub(SceAppUtil ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceAppUtil ${SRCS} "${NIDS}")

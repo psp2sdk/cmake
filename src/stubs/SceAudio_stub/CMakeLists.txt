@@ -14,4 +14,4 @@ set(SRCS
     SceAudio_stub.S
 )
 
-add_psp2_stub(SceAudio ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceAudio ${SRCS} "${NIDS}")

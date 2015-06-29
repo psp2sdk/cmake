@@ -16,4 +16,4 @@ set(SRCS
     SceSystemGesture_stub.S
 )
 
-add_psp2_stub(SceSystemGesture ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceSystemGesture ${SRCS} "${NIDS}")

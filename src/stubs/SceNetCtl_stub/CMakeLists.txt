@@ -16,4 +16,4 @@ set(SRCS
     SceNetCtl_stub.S
 )
 
-add_psp2_stub(SceNetCtl ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceNetCtl ${SRCS} "${NIDS}")

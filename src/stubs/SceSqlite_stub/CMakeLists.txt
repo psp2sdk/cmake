@@ -55,4 +55,4 @@ set(SRCS
     SceSqlite_stub.S
 )
 
-add_psp2_stub(SceSqlite ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceSqlite ${SRCS} "${NIDS}")

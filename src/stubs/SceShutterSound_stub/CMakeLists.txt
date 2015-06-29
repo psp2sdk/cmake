@@ -12,4 +12,4 @@ set(SRCS
     SceShutterSound_stub.S
 )
 
-add_psp2_stub(SceShutterSound ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceShutterSound ${SRCS} "${NIDS}")

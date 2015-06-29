@@ -33,4 +33,4 @@ set(SRCS
     SceHttp_stub.S
 )
 
-add_psp2_stub(SceHttp ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceHttp ${SRCS} "${NIDS}")

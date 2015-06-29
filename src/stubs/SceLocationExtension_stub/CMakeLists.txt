@@ -12,4 +12,4 @@ set(SRCS
     SceLibLocationExtension_stub.S
 )
 
-add_psp2_stub(SceLocationExtension ${SRCS} ${NIDS})
+add_psp2_one_module_stub(SceLocationExtension ${SRCS} "${NIDS}")
