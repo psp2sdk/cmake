@@ -168,7 +168,7 @@ PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xaee7fdd1, sceGxmTextureSetHeight
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb042a4d2, sceGxmSetBackDepthFunc
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb0bd52f3, sceGxmTextureGetStride
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb0f1e4ec, sceGxmInitialize
-PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb291c959, sceGxmGetRenderTargetMemSize
+PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb291c959, sceGxmGetRenderTargetMemSizes
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb32917f0, sceGxmSetYuvProfile
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb452f1fb, sceGxmPrecomputedFragmentStateSetUniformBuffer
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xb627de66, sceGxmTerminate
@@ -208,6 +208,7 @@ PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xce94ca15, sceGxmTextureGetMipFilter
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xcecb584a, sceGxmPrecomputedFragmentStateGetDefaultUniformBuffer
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xd096336e, sceGxmSetWClampValue
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xd0e3cd9a, sceGxmSetFrontVisibilityTestOp
+PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xd0edab4c, sceGxmRenderTargetGetHostMem
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xd10f7ead, sceGxmTransferDownscale
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xd2dc4643, sceGxmTextureSetMipmapCount
 PSP2_IMPORT_FUNC SceGxm, 0001, F00, 0xd572d547, sceGxmTextureInitSwizzled

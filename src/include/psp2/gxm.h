@@ -1171,15 +1171,13 @@ typedef enum SceGxmRenderTargetFlags {
 } SceGxmRenderTargetFlags;
 
 typedef struct SceGxmRenderTargetParams {
-	SceGxmRenderTargetFlags flags;
-	unsigned short width;
-	unsigned short height;
-	unsigned short scenesPerFrame;
-	SceGxmMultisampleMode multisampleMode;
-	unsigned int multisampleLocations;
-	void *hostMem;
-	SceSize hostMemSize;
-	int driverMemBlock;
+	uint32_t flags;	                //!< Bitwise combined flags from #SceGxmRenderTargetFlags.
+	uint16_t width;	                //!< The width of the render target in pixels.
+	uint16_t height;                //!< The height of the render target in pixels.
+	uint16_t scenesPerFrame;        //!< The expected number of scenes per frame, in the range [1,#SCE_GXM_MAX_SCENES_PER_RENDERTARGET].
+	uint16_t multisampleMode;       //!< A value from the #SceGxmMultisampleMode enum.
+	uint32_t multisampleLocations;  //!< If enabled in the flags, the multisample locations to use.
+	SceUID driverMemBlock;          //!< The uncached LPDDR memblock for the render target GPU data structures or SCE_UID_INVALID_UID to specify memory should be allocated in libgxm.
 } SceGxmRenderTargetParams;
 
 /* prototypes */
@@ -1441,7 +1439,7 @@ void sceGxmPrecomputedDrawSetParamsInstanced(SceGxmPrecomputedDraw *precomputedD
 int sceGxmGetRenderTargetMemSizes(const SceGxmRenderTargetParams *params, unsigned int *hostMemSize, unsigned int *driverMemSize);
 int sceGxmCreateRenderTarget(const SceGxmRenderTargetParams *params, SceGxmRenderTarget **renderTarget);
 int sceGxmRenderTargetGetHostMem(const SceGxmRenderTarget *renderTarget, void **hostMem);
-int sceGxmRenderTargetGetDriverMemBlock(const SceGxmRenderTarget *renderTarget, int *driverMemBlock);
+int sceGxmRenderTargetGetDriverMemBlock(const SceGxmRenderTarget *renderTarget, SceUID *driverMemBlock);
 int sceGxmDestroyRenderTarget(SceGxmRenderTarget *renderTarget);
 
 int sceGxmSetUniformDataF(void *uniformBuffer, const SceGxmProgramParameter *parameter, unsigned int componentOffset, unsigned int componentCount, const float *sourceData);

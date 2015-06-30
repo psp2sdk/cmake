@@ -1,5 +1,4 @@
 /*
- *
  * Copyright (C) 2015 PSP2SDK Project
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
@@ -51,7 +50,7 @@
 
 _BEGIN_STD_C
 
-typedef struct { } FILE;
+typedef struct __FILE FILE;
 
 #ifdef __CYGWIN__
 typedef _fpos64_t fpos_t;
