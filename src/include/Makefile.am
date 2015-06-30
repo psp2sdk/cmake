@@ -22,4 +22,5 @@ nobase_include_HEADERS = psp2/export.s psp2/import.S	\
 	c++/bits/opt_random.h c++/bits/basic_file.h c++/bits/cxxabi_tweaks.h	\
 	c++/bits/ctype_inline.h c++/bits/extc++.h c++/bits/gthr-posix.h	\
 	c++/bits/error_constants.h c++/bits/stdtr1c++.h	c++/bits/c++config.h	\
-	errno.h stdio.h wchar.h
+	sys/stdio.h	\
+	alloca.h errno.h malloc.h stdio.h stdlib.h string.h wchar.h
