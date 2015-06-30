@@ -30,3 +30,5 @@ install(DIRECTORY include DESTINATION . FILES_MATCHING PATTERN "*.S")
 
 # Install CMake toolchain file
 install(FILES cmake/toolchain-arm-none-eabi-psp2.cmake DESTINATION cmake)
+# Install FindPSP2SDK.cmake (FIXME should be packaged outside cmake build)
+install(FILES cmake/FindPSP2SDK.cmake DESTINATION cmake)
