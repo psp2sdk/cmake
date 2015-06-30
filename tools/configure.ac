@@ -11,6 +11,13 @@ AC_CONFIG_SRCDIR(psp2-fixup/psp2-fixup.c)
 
 AM_INIT_AUTOMAKE(foreign)
 
+AC_ARG_WITH(silent-rules,
+	AS_HELP_STRING(--with-silent-rules Enable silent rules),
+	silent=yes)
+if test "$silent"=yes; then
+	AM_SILENT_RULES(yes)
+fi
+
 # Checks for programs.
 AC_PROG_CC
 
